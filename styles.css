@@ -322,23 +322,39 @@ footer {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     
-    .container {
-        margin-top: 130px; 
+    .sticky-nav {
+        flex-direction: column; 
+        height: auto;         
+        padding: 15px 0;        
     }
 
-    /* 2. Shrink the Logo text so it takes up less space */
+    /* 2. Fix the Logo Text */
+    .nav-brand {
+        margin-bottom: 10px; 
+        text-align: center;     
+    }
+
     .nav-brand a {
-        font-size: 1.0rem; /* Smaller font */
-        letter-spacing: 0px;
+        font-size: 1.2rem;     
+        white-space: normal;   
+    }
+
+    .nav-links {
+        width: 100%;         
+        justify-content: center;
+        margin-right: 0;       
+        flex-wrap: wrap;     
+        gap: 5px;            
     }
 
     .nav-links a {
-        font-size: 0.9rem;
-        padding: 5px 8px;
+        font-size: 1rem;
+        padding: 8px 12px; 
+        background-color: rgba(0,0,0,0.2); 
+        border-radius: 5px;
     }
-    
-    .sticky-nav {
-        height: auto;
-        padding: 10px;
+
+    .container {
+        margin-top: 140px;   
     }
 }
