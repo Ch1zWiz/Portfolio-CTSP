@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;   
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background: linear-gradient(to bottom, #05164d 0%, #0044cc 100%);
+    background-attachment: fixed; 
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+/* --- ANIMATION CLASS --- */
+.scroll-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+    margin-bottom: 10px;
+    min-height: 60vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.scroll-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*SECTION 1: ABOUT ME*/
+.about-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* The Photo Frame */
+.photo-frame {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; 
+    border: 8px solid #e0e0e0; 
+    box-shadow: 0 0 0 4px #555, 10px 10px 20px rgba(0,0,0,0.5);
+    overflow: hidden;
+    background: #000;
+}
+
+/* --- PERSONAL STATS SECTION --- */
+.personal-stats {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #555;
+    padding: 15px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+    font-size: 1.3rem;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between; 
+    border-bottom: 1px dashed #444; 
+    padding: 8px 0;
+}
+
+.stat-row:last-child {
+    border-bottom: none; 
+}
+
+.stat-label {
+    color: #4d79ff; 
+    font-weight: bold;
+}
+
+.stat-row {
+    display: grid;
+    grid-template-columns: 130px 1fr; 
+    align-items: center; 
+    border-bottom: 1px dashed #444;
+    padding: 8px 0;
+}
+
+.stat-value {
+    text-align: left; 
+    color: #fff;
+    word-wrap: break-word;
+}
+
+@media (max-width: 500px) {
+    .stat-row {
+        grid-template-columns: 1fr; 
+        gap: 5px;
+    }
+}
+
+.nav-brand {
+    font-size: 1.4rem;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.nav-brand .blue-highlight {
+    color: #4d79ff; 
+    text-shadow: 1px 1px 0 #000;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Text Area*/
+.text-container {
+    max-width: 600px;
+}
+
+.label-tag {
+    background-color: white;
+    color: #3333ff;
+    display: inline-block;
+    padding: 5px 20px;
+    margin-bottom: 0;
+    border: 2px solid white;
+}
+
+.label-tag h2 {
+    font-size: 2.5rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.blue-highlight {
+    font-weight: bold;
+    color: #3333ff;
+}
+
+.bio-box {
+    background-color: #3333ff;
+    color: black;
+    padding: 25px;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+    border: 2px solid white; 
+}
+
+.sticky-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, #245edb 0%, #3f8cf3 10%, #245edb 20%, #1941a5 100%);
+    border-bottom: 2px solid #001ea0;
+    padding: 0 20px; 
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.nav-brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0px #000; 
+}
+
+
+.blink-cursor::after {
+    content: "____";
+    animation: blinker 1s infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.nav-logo:hover {
+    filter: brightness(1.1);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+/* Hover effect for links (looks like a pressed button) */
+.nav-links a:hover {
+    background-color: #1e52b7;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.container {
+    margin-top: 20px; 
+}
+
+/* --- SECTION 2: WORKS --- */
+.section-heading {
+    font-size: 3.5rem;
+    color: #4d79ff;
+    text-shadow: 2px 2px 0 #000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.empty-state-frame {
+    border: 4px dashed #666;
+    background: rgba(0,0,0,0.3);
+    padding: 60px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.warning-icon {
+    font-size: 5rem;
+    color: #ffcc00; 
+    margin-bottom: 20px;
+}
+
+.empty-state-frame h3 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.empty-state-frame p {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.blink {
+    animation: blinker 1.5s linear infinite;
+    margin-top: 15px;
+    color: #4d79ff;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/*SECTION 3: HOBBIES*/
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* The Pills */
+.hobby-pill {
+    background-color: #555;
+    color: #ddd;
+    font-size: 2rem;
+    padding: 10px 30px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    border: 2px solid #777;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+}
+
+.hobby-pill:hover {
+    transform: scale(1.1);
+    background-color: #3333ff; /* Blue on hover */
+    color: white;
+    border-color: white;
+}
+
+/* --- SKILLS SPECIFIC --- */
+.skill-pill i {
+    font-size: 2.2rem; 
+}
+
+.skill-pill:hover {
+    box-shadow: 0 0 15px rgba(51, 51, 255, 0.6);
+    border-color: #4d79ff;
+}
+
+/* Specific fix just for the Skills section */
+#skills {
+    margin-bottom: 20px; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bio-box {
+        font-size: 1.2rem;
+    }
+    .section-heading {
+        font-size: 2.5rem;
+    }
+    
+}
